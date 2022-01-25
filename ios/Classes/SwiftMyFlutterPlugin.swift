@@ -9,6 +9,14 @@ public class SwiftMyFlutterPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    switch call.method {
+    case "getPlatformVersion":
+      return result("iOS " + UIDevice.current.systemVersion)
+    case "playSound":
+      // TODO: implement play sound.
+      return result(FlutterMethodNotImplemented)
+    default:
+      return result(FlutterMethodNotImplemented)
+    }
   }
 }

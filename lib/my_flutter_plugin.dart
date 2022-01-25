@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class MyFlutterPlugin {
@@ -10,7 +11,11 @@ class MyFlutterPlugin {
     return version;
   }
 
-  static void playSound() {
-    _channel.invokeMethod('playSound');
+  static void playSound() async {
+    try {
+      await _channel.invokeMethod('playSound');
+    } on MissingPluginException catch (error) {
+      debugPrint(error.message);
+    }
   }
 }
