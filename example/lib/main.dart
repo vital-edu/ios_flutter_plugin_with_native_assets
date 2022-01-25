@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.play_arrow),
           onPressed: () {
-            // MyFlutterPlugin.playSound()
+            MyFlutterPlugin.playSound();
           },
         ),
       ),
