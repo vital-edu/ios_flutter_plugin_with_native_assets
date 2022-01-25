@@ -16,6 +16,8 @@ class MyFlutterPlugin {
       await _channel.invokeMethod('playSound');
     } on MissingPluginException catch (error) {
       debugPrint(error.message);
+    } on PlatformException catch (error) {
+      debugPrint(error.message);
     }
   }
 }
